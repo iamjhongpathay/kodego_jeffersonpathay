@@ -8,4 +8,13 @@ fun main(){
         //update
         ctr++
     }
+
+//    var ctr : Int = 1
+//    //condition
+//    while(ctr <=5){
+//        if(ctr == 3){
+//            println("Hello Program $ctr")
+//        }
+//        ctr++
+//    }
 }
