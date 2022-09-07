@@ -22,6 +22,7 @@ fun main (){
         //It will ask the user to continue to add another amount
         println("Do you want to add another amount?[Yes/No]")
         var question : String = readln().toString()
+
         //If the user entered a "No" answer, it will ask the user to enter the desire value to divide the total amount
         if (question == "No"){
             println("Divide the value by how many?")
@@ -30,12 +31,12 @@ fun main (){
 
             //This will show the final answer including the sum of amount
             println("The Sum of the amount you entered is: $totalAmount")
-            println("$totalAmount is Divided by $dividedBy: $totalDividedBy")
+            println("The Total of $totalAmount is Divided by $dividedBy = $totalDividedBy")
             condition = false
 
         //Error Handling! If user enter a wrong answer between [Yes/No]
         }else if((question != "No") && (question != "Yes")){
-            println("Invalid! Please choose [Yes/No]")
+            println("Invalid! Please choose between [Yes/No]")
         }
     }
 
