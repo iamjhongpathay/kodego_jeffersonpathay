@@ -10,11 +10,20 @@ fun main(){
         println()
         ctr1++
     }
+    //output
+    //@@@@@
+    //@@@@@
+    //@@@@@
+    //@@@@@
+    //@@@@@
+
+//    var condition : Boolean = true
+//
+//    while (condition){
+//
+//        if (){
+//            condition = false
+//        }
+//    }
 }
 
-//output
-    //@@@@@
-    //@@@@@
-    //@@@@@
-    //@@@@@
-    //@@@@@
