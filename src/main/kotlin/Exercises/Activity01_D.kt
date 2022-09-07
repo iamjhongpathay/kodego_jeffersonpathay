@@ -32,6 +32,10 @@ fun main (){
             println("The Sum of the amount you entered is: $totalAmount")
             println("$totalAmount is Divided by $dividedBy: $totalDividedBy")
             condition = false
+
+        //Error Handling! If user enter a wrong answer between [Yes/No]
+        }else if((question != "No") && (question != "Yes")){
+            println("Invalid! Please choose [Yes/No]")
         }
     }
 
