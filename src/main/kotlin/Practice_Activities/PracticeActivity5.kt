@@ -12,15 +12,14 @@ fun main(){
 
         ctr++
     }
-    //displaying all number
     var ctr2 : Int = 0
     while (ctr2 < numbers.size){
-        print(numbers[ctr2])
+        print(numbers[ctr2])    //displaying all input number
 
         ctr2++
     }
     println()
-    println(numbers.reversed())
+    println(numbers.reversed()) //displaying all input number in REVERSED
 
 
 }
