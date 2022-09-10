@@ -20,6 +20,4 @@ fun main(){
     }
     println()
     println(numbers.reversed()) //displaying all input number in REVERSED
-
-
 }
