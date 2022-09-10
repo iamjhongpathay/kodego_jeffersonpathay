@@ -9,17 +9,26 @@ fun main(){
     listOf()
      */
 
-    println("Enter number 1:")
-    var number : Int = readln().toInt()
-    println("The cube is ${number * number * number}")
+//    println("Enter number 1:")
+//    var number : Int = readln().toInt()
+//    println("The cube is ${number * number * number}")
+
 
 
     //calling the displayName function
     displayName()
+
     //calling the displayMessage function
     displayMessage(msg = "Hello")
-}
 
+    //calling the displayNameAndAge function with user Input
+    print("Enter your name:")
+    var name: String = readln()
+    print("Enter your age:")
+    var age: Int = readln().toInt()
+
+    displayNameAndAge(name, age)
+}
 
     /* user-define function
      */
@@ -31,4 +40,9 @@ fun displayName():Unit {
 //no return, 1 parameter
 fun displayMessage(msg: String){
     println("The message is \"$msg\"")
+}
+//no return, 2 parameter
+fun displayNameAndAge(name: String, age: Int){
+    println("Your name is $name")
+    println("Your age is $age")
 }
