@@ -1,19 +1,7 @@
-fun main(){
     /*built-in/standard functions in Kotlin
-
-    println()
-    toInt()
-    readLn()
-    main()
-    arrayOf()
-    listOf()
+    println(), toInt(), readLn(), main(), arrayOf(), listOf()
      */
-
-//    println("Enter number 1:")
-//    var number : Int = readln().toInt()
-//    println("The cube is ${number * number * number}")
-
-
+fun main(){
 
     //calling the displayName function
     displayName()
@@ -37,10 +25,12 @@ fun main(){
 fun displayName():Unit {
     println("Peter")
 }
+
 //no return, 1 parameter
 fun displayMessage(msg: String){
     println("The message is \"$msg\"")
 }
+
 //no return, 2 parameter
 fun displayNameAndAge(name: String, age: Int){
     println("Your name is $name")
