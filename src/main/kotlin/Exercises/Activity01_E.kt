@@ -26,6 +26,7 @@ fun main(){
         input1 = input1.replace(charToRemove, "")
         input2 = input2.replace(charToRemove, "")
     }
+    //
     //displaying the final result of unique characters
     print("The unique characters are: $input1 $input2")
 }
