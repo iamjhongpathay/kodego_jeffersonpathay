@@ -1,9 +1,10 @@
 /* Class -> objects
 objects -> variables
            functions
-
  */
+
 fun main (){
+
     //instantiation - process of creating an object
     var myObject = MyClass("Hello Wortld")
     var myObjectInt= MyClassInteger(2151)
