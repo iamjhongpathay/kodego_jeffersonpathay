@@ -19,16 +19,16 @@ fun main(){
 
 
 
-    println("Perimeter is: ${perimeter(length, width)} meters") //calling the Perimeter function
-    println("Area is: ${areaOfRectangle(length, width)} meters") //calling the Area of Rectangle function
+    println("Perimeter is: ${calculatePerimeter(length, width)} meters") //calling the Perimeter function
+    println("Area is: ${calculateArea(length, width)} meters") //calling the Area of Rectangle function
 
 }
 
-fun perimeter(length: Double, width: Double):Double{
+fun calculatePerimeter(length: Double, width: Double):Double{
     var resultPerimeter : Double = 2 * (length + width)
     return resultPerimeter
 }
-fun areaOfRectangle(length: Double, width: Double):Double{
+fun calculateArea(length: Double, width: Double):Double{
     var resultAreaofRec : Double = length.toDouble() * width
     return resultAreaofRec
 }
