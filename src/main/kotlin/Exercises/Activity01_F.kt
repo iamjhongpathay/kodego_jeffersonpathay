@@ -8,12 +8,13 @@ fun main (){
     var inputWord : String = readln()
 
     var reverseString : String = ""
-    var ctr : Int = inputWord.length-1
+    var ctr : Int = inputWord.length - 1
 
     //checking the string by reversed
     while(ctr != -1){
         reverseString += inputWord[ctr--]
     }
+    //condition to know the inputWord and reverseString are equal to Palindrome or NOT
     if(inputWord == reverseString){
         println("The $inputWord is a Palindrome String")
     }else
