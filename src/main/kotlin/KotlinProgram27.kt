@@ -1,7 +1,7 @@
 fun main (){
     var joe = Person( "Joe", 21) //instantiation
     println("**************")
-    println("${joe.name}'s current age is ${joe.name}")
+    println("${joe.name}'s current age is ${joe.age}")
     println("After 1 year . . . ")
     joe.ageUp()
     println("${joe.name}'s current age is ${joe.age}")
