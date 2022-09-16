@@ -9,13 +9,22 @@ fun main(){
         //2 secondary constructors
      */
 
-    //var mobilePhone = MobilePhone("Xiaomi", 64, 18, 6200, 7500.00)
-    //var vivo = MobilePhone("Vivo")
-    var price = MobilePhone(8000.00)
+
+    var mobilePhone = MobilePhone("Xiaomi", 64, 18, 6200, 7500.00)
+//    var vivo = MobilePhone("Vivo")
+//    var price = MobilePhone(8000.00)
+
+    println()
+    mobilePhone.call()
+    mobilePhone.text()
+    mobilePhone.capturePhotoVideos()
+    mobilePhone.calculate()
+    mobilePhone.alarmClock()
 }
 
+    //5 attributes
+    //Primary Constructor
 class MobilePhone(var brand : String, var ram : Int, var camera : Int, var battery : Int, var price : Double){
-
     init{
         println("Mobile Phone Specification")
         println("The brand is $brand")
@@ -25,22 +34,24 @@ class MobilePhone(var brand : String, var ram : Int, var camera : Int, var batte
         println("The display size is $price Php")
     }
 
+    //2 Secondary Constructor
     constructor(brand : String):this(brand, 64, 18, 6200, 7500.00){}
     constructor(price : Double):this("Xiaomi", 64, 18, 6200, price){}
 
+    //5 Behaviours
     fun call(){
-        print("The Mobile Phone can call")
+        println("The $brand Phone can call")
     }
     fun text(){
-        print("The Mobile Phone can create a cellular text")
+        println("The $brand Phone can create a cellular text")
     }
     fun capturePhotoVideos(){
-        print("The Mobile Phone can capture a photo and videos")
+        println("The $brand Phone can capture a photo and videos")
     }
     fun calculate(){
-        print("The Mobile Phone can calculate")
+        println("The $brand Phone can calculate")
     }
     fun alarmClock(){
-        print("The Mobile Phone can set an alarm clock")
+        println("The $brand Phone can set an alarm clock")
     }
 }
