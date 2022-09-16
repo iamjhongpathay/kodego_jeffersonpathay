@@ -17,7 +17,7 @@ fun main(){
 class MobilePhone(var brand : String, var ram : Int, var camera : Int, var battery : Int, var price : Double){
 
     init{
-        println("MobilePhone Specification")
+        println("Mobile Phone Specification")
         println("The brand is $brand")
         println("The internal memory is ${ram}GB")
         println("The main camera is $camera MP")
@@ -29,18 +29,18 @@ class MobilePhone(var brand : String, var ram : Int, var camera : Int, var batte
     constructor(price : Double):this("Xiaomi", 64, 18, 6200, price){}
 
     fun call(){
-        print("The MobilePhone can call")
+        print("The Mobile Phone can call")
     }
     fun text(){
-        print("The MobilePhone can create a cellular text")
+        print("The Mobile Phone can create a cellular text")
     }
     fun capturePhotoVideos(){
-        print("The MobilePhone can capture a photo and videos")
+        print("The Mobile Phone can capture a photo and videos")
     }
     fun calculate(){
-        print("The MobilePhone can calculate")
+        print("The Mobile Phone can calculate")
     }
     fun alarmClock(){
-        print("The MobilePhone can set an alarm clock")
+        print("The Mobile Phone can set an alarm clock")
     }
 }
