@@ -1,6 +1,6 @@
 fun main(){
     var num = arrayOf(
-        arrayOf<String>("Peter", "Paul", "Mary"),
+        arrayOf("Peter", "Paul", true),
         arrayOf<String>("John", "Mark", "Matthew"),
         arrayOf<String>("James", "Luke", "Zachary"),
     )
