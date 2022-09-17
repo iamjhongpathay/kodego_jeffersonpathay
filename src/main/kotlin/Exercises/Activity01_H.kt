@@ -3,10 +3,7 @@ fun main (){
     Using Activity 01 - B and Implement a process where someone can borrow a book.
      */
 
-
-
-
-    var book1 = arrayOf("TG1925", "The Great Gatsby", "F. Scott Fitzgerald", 1925, false)
+    var book1 = arrayOf("TG1925", "The Great Gatsby", "F. Scott Fitzgerald", 1925, true)
     var book2 = arrayOf("L1955", "Lolita", "Vladimir Nabokov", 1955, false)
 //    var book3 = arrayOf("TG1925", "The Great Gatsby", "F. Scott Fitzgerald", 1925, true)
 //    var book4 = arrayOf("TG1925", "The Great Gatsby", "F. Scott Fitzgerald", 1925, true)
