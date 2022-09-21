@@ -1,5 +1,5 @@
 fun main (){
-    var anne = Person("Anne")
+    var anne = Person("James")
     anne.age = 25
     anne.displayAge()
 }

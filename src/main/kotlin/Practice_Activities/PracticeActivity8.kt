@@ -13,8 +13,6 @@ fun maxNumber(num1: Int, num2: Int, num3: Int):Int{
     } else if((num1 < num2) && (num2 < num3)){
         maxValue = num3
     }
-
-
     return maxValue
 
 }
