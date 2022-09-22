@@ -1,3 +1,51 @@
+
+fun main(){
+
+    /*Activity 02 - E
+    Implement Activity 02 - B using Classes.
+     */
+
+    //Calling Class BookData()
+    var bookData = BookData()
+
+    //user interface of School Library System
+    var condition : Boolean = true
+    while (condition){
+        println()
+        println("[School Library System]")
+        println()
+        bookData.displayBooks()
+        println("[----------------------------------]")
+        println()
+
+        println("Enter [1] To Borrow")
+        println("Enter [2] To Return")
+        println("Enter [3] To Exit")
+        print("Enter a Number from the available choices: ")
+        var chooseNum : Int = readln().toInt()
+
+        //user chose [1] to BORROW a book
+        if(chooseNum == 1){
+            println()
+            println("[-----------Borrow a Book-----------]")
+            println()
+            bookData.borrowBooks()
+
+            //user chose [2] to RETURN a book
+        }else if(chooseNum == 2){
+            println()
+            println("[-----------Return a Book-----------]")
+            println()
+            bookData.returnBooks()
+
+        }else if( chooseNum == 3){
+            condition = false
+        }
+    }
+
+
+}
+
 class BookData(){
 
     var book1 = arrayOf<Any>("TG1925", "The Great Gatsby", "F. Scott Fitzgerald", 1925, true)
@@ -268,51 +316,4 @@ class BookData(){
             }
         }
     }
-}
-
-fun main(){
-
-    /*Activity 02 - E
-    Implement Activity 02 - B using Classes.
-     */
-
-    //Calling Class BookData()
-    var bookData = BookData()
-
-    //user interface of School Library System
-    var condition : Boolean = true
-    while (condition){
-        println()
-        println("[School Library System]")
-        println()
-        bookData.displayBooks()
-        println("[----------------------------------]")
-        println()
-
-        println("Enter [1] To Borrow")
-        println("Enter [2] To Return")
-        println("Enter [3] To Exit")
-        print("Enter a Number from the available choices: ")
-        var chooseNum : Int = readln().toInt()
-
-        //user chose [1] to BORROW a book
-        if(chooseNum == 1){
-            println()
-            println("[-----------Borrow a Book-----------]")
-            println()
-            bookData.borrowBooks()
-
-            //user chose [2] to RETURN a book
-        }else if(chooseNum == 2){
-            println()
-            println("[-----------Return a Book-----------]")
-            println()
-            bookData.returnBooks()
-
-        }else if( chooseNum == 3){
-            condition = false
-        }
-    }
-
-
 }
