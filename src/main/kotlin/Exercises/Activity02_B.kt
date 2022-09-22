@@ -7,7 +7,7 @@ fun main (){
     var book1 = arrayOf("TG1925", "The Great Gatsby", "F. Scott Fitzgerald", 1925, true)
     var book2 = arrayOf("L1955", "Lolita", "Vladimir Nabokov", 1955, false)
     var book3 = arrayOf("NEF1949", "Nineteen Eighty-Four", "George Orwell", 1949 , false)
-    var book4 = arrayOf("AK1878", "Anna Karenina", "Leo Tolsto", 1878, false)
+    var book4 = arrayOf("AK1878", "Anna Karenina", "Leo Tolsto", 1878, true)
 
     //user interface of School Library System
     println("School Library System")
@@ -424,7 +424,119 @@ fun main (){
                     println("[-----------This book is already returned!-----------]")
                 }
                 //No existing book
-            } else if ((bookCode != book1[0]) && (bookCode != book2[0])) {
+            }else if(bookCode == book3[0]){
+                println("Title: ${book3[1]}")
+                println("Author: ${book3[2]}")
+                println("Edition: ${book3[3]}")
+                println("Availability: ${book3[4]}")
+
+                //if index 4 of book2 is equal to FALSE
+                if (book3[4] == false) {
+                    println()
+                    print("Do you want to return this book?[Yes/No]: ")
+                    var borrowThis2: String = readln()
+
+                    if (borrowThis2 == "Yes") {
+                        book3.set(4, true)  //the 4th index of the book2 will change into TRUE
+
+                        println()
+                        println("[-----------You returned the book successfully! Thank you!-----------]")
+                        println()
+
+                        println("School Library System")
+                        println()
+                        println("Book Code: ${book1[0]}")
+                        println("Title: ${book1[1]}")
+                        println("Author: ${book1[2]}")
+                        println("Edition: ${book1[3]}")
+                        println("Availability: ${book1[4]}")
+                        println()
+                        println("***********************")
+                        println()
+                        println("Book Code: ${book2[0]}")
+                        println("Title: ${book2[1]}")
+                        println("Author: ${book2[2]}")
+                        println("Edition: ${book2[3]}")
+                        println("Availability: ${book2[4]}")
+                        println()
+                        println("***********************")
+                        println()
+                        println("Book Code: ${book3[0]}")
+                        println("Title: ${book3[1]}")
+                        println("Author: ${book3[2]}")
+                        println("Edition: ${book3[3]}")
+                        println("Availability: ${book3[4]}")
+                        println()
+                        println("***********************")
+                        println()
+                        println("Book Code: ${book4[0]}")
+                        println("Title: ${book4[1]}")
+                        println("Author: ${book4[2]}")
+                        println("Edition: ${book4[3]}")
+                        println("Availability: ${book4[4]}")
+                    }
+                    //book2 is already returned
+                } else if (book3[4] == true) {
+                    println("[-----------This book is already returned!-----------]")
+                }
+                //No existing book
+            }else if(bookCode == book4[0]){
+                println("Title: ${book4[1]}")
+                println("Author: ${book4[2]}")
+                println("Edition: ${book4[3]}")
+                println("Availability: ${book4[4]}")
+
+                //if index 4 of book2 is equal to FALSE
+                if (book4[4] == false) {
+                    println()
+                    print("Do you want to return this book?[Yes/No]: ")
+                    var borrowThis2: String = readln()
+
+                    if (borrowThis2 == "Yes") {
+                        book3.set(4, true)  //the 4th index of the book2 will change into TRUE
+
+                        println()
+                        println("[-----------You returned the book successfully! Thank you!-----------]")
+                        println()
+
+                        println("School Library System")
+                        println()
+                        println("Book Code: ${book1[0]}")
+                        println("Title: ${book1[1]}")
+                        println("Author: ${book1[2]}")
+                        println("Edition: ${book1[3]}")
+                        println("Availability: ${book1[4]}")
+                        println()
+                        println("***********************")
+                        println()
+                        println("Book Code: ${book2[0]}")
+                        println("Title: ${book2[1]}")
+                        println("Author: ${book2[2]}")
+                        println("Edition: ${book2[3]}")
+                        println("Availability: ${book2[4]}")
+                        println()
+                        println("***********************")
+                        println()
+                        println("Book Code: ${book3[0]}")
+                        println("Title: ${book3[1]}")
+                        println("Author: ${book3[2]}")
+                        println("Edition: ${book3[3]}")
+                        println("Availability: ${book3[4]}")
+                        println()
+                        println("***********************")
+                        println()
+                        println("Book Code: ${book4[0]}")
+                        println("Title: ${book4[1]}")
+                        println("Author: ${book4[2]}")
+                        println("Edition: ${book4[3]}")
+                        println("Availability: ${book4[4]}")
+                    }
+                    //book2 is already returned
+                } else if (book4[4] == true) {
+                    println("[-----------This book is already returned!-----------]")
+                }
+                //No existing book
+            } else if ((bookCode != book1[0]) && (bookCode != book2[0]) && (bookCode != book3[0]) && (bookCode != book4[0])) {
                 println("No book found!")
             }
         }
