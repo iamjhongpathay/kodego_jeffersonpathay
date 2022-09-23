@@ -27,18 +27,18 @@ fun main(){
      */
 
     //Calling SalesDiscount() Class
-    var salesDiscount = SalesDiscount("", 0.0.toFloat())
+    var salesDiscount = SalesDiscount()
 
     var condition : Boolean = true
     while (condition){
         try{
             print("Enter Product: ")
-            salesDiscount.productName = readln()
+            var productName : String = readln()
             print("Enter Price: ")
-            salesDiscount.price = readln().toFloat()
-            println()
-            println(">Price of ${salesDiscount.productName} is ${salesDiscount.price} Pesos.")
-            salesDiscount.discountAmount(salesDiscount.price)
+            var productPrice : Float = readln().toFloat()
+
+            println(">Price of $productName is $productPrice Pesos.")
+            salesDiscount.discountAmount(productPrice)
             println()
 
             var condition2 : Boolean = true
@@ -67,7 +67,7 @@ fun main(){
 
 }
 
-class SalesDiscount(var productName: String,var price: Float){
+class SalesDiscount(){
 
     init{
         println("[----------------------------Welcome---------------------------]")
@@ -75,47 +75,47 @@ class SalesDiscount(var productName: String,var price: Float){
         println()
     }
 
-    fun discountAmount(priceToDiscount : Float){
-        var totalDiscount : Float = 0.0.toFloat()
-        var discountedPrice : Float = 0.0.toFloat()
+    fun discountAmount(price : Float){
+        var discount : Float
+        var netPrice : Float
 
-        if(priceToDiscount < 1){
+        if(price < 1){
             println("Invalid Amount! The amount should be greater than zero(0).")
 
-        }else if((priceToDiscount >= 0) && (priceToDiscount <= 10000)){         //0-10,000                0%
-            totalDiscount = (priceToDiscount * 0 / 100).toFloat()
-            discountedPrice = priceToDiscount - totalDiscount
+        }else if((price >= 0) && (price <= 10000)){         //0-10,000                0%
+            discount = (price * 0 / 100).toFloat()
+            netPrice = price - discount
 
-            println(">Discount is $totalDiscount Pesos, that is 0% discount.")
-            println(">Net Price is $discountedPrice Pesos")
+            println(">Discount is $discount Pesos, that is 0% discount rate.")
+            println(">Net Price is $netPrice Pesos")
 
-        }else if((priceToDiscount >= 10001) && (priceToDiscount <= 20000)){     //10,001 - 20,000         5%
-            totalDiscount = (priceToDiscount * 5 / 100).toFloat()
-            discountedPrice = priceToDiscount - totalDiscount
+        }else if((price >= 10001) && (price <= 20000)){     //10,001 - 20,000         5%
+            discount = (price * 5 / 100).toFloat()
+            netPrice = price - discount
 
-            println(">Discount is $totalDiscount Pesos, that is 5% discount.")
-            println(">Net Price is $discountedPrice Pesos")
+            println(">Discount is $discount Pesos, that is 5% discount rate.")
+            println(">Net Price is $netPrice Pesos")
 
-        }else if((priceToDiscount >= 20001) && (priceToDiscount <= 50000)){     //20,001 - 50,000         10%
-            totalDiscount = (priceToDiscount * 10 / 100).toFloat()
-            discountedPrice = priceToDiscount - totalDiscount
+        }else if((price >= 20001) && (price <= 50000)){     //20,001 - 50,000         10%
+            discount = (price * 10 / 100).toFloat()
+            netPrice = price - discount
 
-            println(">Discount is $totalDiscount Pesos, that is 10% discount.")
-            println(">Net Price is $discountedPrice Pesos")
+            println(">Discount is $discount Pesos, that is 10% discount rate.")
+            println(">Net Price is $netPrice Pesos")
         }
-        else if((priceToDiscount >= 50001) && (priceToDiscount <= 100000)){     //50,001 - 100,000        15%
-            totalDiscount = (priceToDiscount * 15 / 100).toFloat()
-            discountedPrice = priceToDiscount - totalDiscount
+        else if((price >= 50001) && (price <= 100000)){     //50,001 - 100,000        15%
+            discount = (price * 15 / 100).toFloat()
+            netPrice = price - discount
 
-            println(">Discount is $totalDiscount Pesos, that is 15% discount.")
-            println(">Net Price is $discountedPrice Pesos")
+            println(">Discount is $discount Pesos, that is 15% discount rate.")
+            println(">Net Price is $netPrice Pesos")
 
-        }else if(priceToDiscount > 100000){                                     //Greater than 100,000    20%
-            totalDiscount = (priceToDiscount * 20 / 100).toFloat()
-            discountedPrice = priceToDiscount - totalDiscount
+        }else if(price > 100000){                                     //Greater than 100,000    20%
+            discount = (price * 20 / 100).toFloat()
+            netPrice = price - discount
 
-            println(">Discount is $totalDiscount Pesos, that is 20% discount.")
-            println(">Net Price is $discountedPrice Pesos")
+            println(">Discount is $discount Pesos, that is 20% discount rate.")
+            println(">Net Price is $netPrice Pesos")
         }
     }
 }
