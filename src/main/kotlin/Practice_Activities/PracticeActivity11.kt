@@ -75,8 +75,8 @@ class SalesDiscount(){
         println()
     }
 
-    fun discountAmount(price : Float){
-        var discount : Float
+    fun discountAmount(price : Float): Float{
+        var discount : Float = 0.0.toFloat()
         var netPrice : Float
 
         if(price < 1){
@@ -110,12 +110,13 @@ class SalesDiscount(){
             println(">Discount is $discount Pesos, that is 15% discount rate.")
             println(">Net Price is $netPrice Pesos")
 
-        }else if(price > 100000){                                     //Greater than 100,000    20%
+        }else if(price > 100001){                                     //Greater than 100,000    20%
             discount = (price * 20 / 100).toFloat()
             netPrice = price - discount
 
             println(">Discount is $discount Pesos, that is 20% discount rate.")
             println(">Net Price is $netPrice Pesos")
         }
+        return discount
     }
 }
