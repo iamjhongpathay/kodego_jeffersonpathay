@@ -7,12 +7,6 @@ import org.junit.jupiter.api.Test
 class SalesDiscountTest{
     //Test Cases
 
-//    @Test
-//    fun LessThanZero(){
-//        var salesDiscount = SalesDiscount()
-//
-//    }
-
     //(1) >=0 and <=10,000 - return 0%
     @Test
     fun greaterThanZeroAndLessThanTenThousand(){
