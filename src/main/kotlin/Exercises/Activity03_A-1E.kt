@@ -12,36 +12,43 @@ fun main(){
     while(mainLoop){
         try{
             println()
-            print("Enter First String: ")
+            print("Enter a First Word: ")
             firstString = readln()
-            print("Enter Second String: ")
+            print("Enter a Second Word: ")
             secondString = readln()
 
-            if((firstString.checkIfString() == "true") && (secondString.checkIfString() == "true")){
-                mainLoop = false
+            if((firstString == "") || (secondString == "")){
+                mainLoop = true
+                println("[!]Error: Enter a Word!")
+            }else{
 
-                //finding the same characters of firstString with secondString
-                for(a in 0 until firstString.length){
-                    for(b in 0 until secondString.length){
-                        if (firstString[a] == secondString[b]){
-                            sameChars  += firstString[a]
+                if((firstString.checkIfString() == "true") && (secondString.checkIfString() == "true")){
+                    mainLoop = false
+
+                    //finding the same characters of firstString with secondString
+                    for(a in 0 until firstString.length){
+                        for(b in 0 until secondString.length){
+                            if (firstString[a] == secondString[b]){
+                                sameChars  += firstString[a]
+                            }
                         }
                     }
+
+                    for (ctr in 0 until sameChars.length) {
+                        var replace = sameChars[ctr] + ""
+
+                        //the characters that same between firstString and secondString are replaced to empty character
+                        firstString = firstString.replace(replace, "")
+                        secondString = secondString.replace(replace, "")
+                    }
+
+                    println("The unique characters between 1st and 2nd Word are: $firstString$secondString")
+                }else {
+                    mainLoop = true
+                    println("[!]Error: Enter a Word!")
                 }
-
-                for (ctr in 0 until sameChars.length) {
-                    var replace = sameChars[ctr] + ""
-
-                    //the characters that same between firstString and secondString are replaced to empty character
-                    firstString = firstString.replace(replace, "")
-                    secondString = secondString.replace(replace, "")
-                }
-
-                println("The unique characters between 1st String and 2nd String are: $firstString$secondString")
-            }else {
-                mainLoop = true
-                println("[!]Error: Enter a String!")
             }
+
         }catch(e : Exception){
             println(e)
         }
