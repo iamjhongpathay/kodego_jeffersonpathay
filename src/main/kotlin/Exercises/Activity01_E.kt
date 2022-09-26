@@ -8,16 +8,24 @@ fun main(){
 
     print("Enter First String: ")
     var firstString : String = readln()
-    print("Enter Second String")
+    print("Enter Second String: ")
     var secondString : String = readln()
 
-    //it will find the same characters of input1 with input2
+    //finding the same characters of firstString with secondString
     for(a in 0 until firstString.length){
         for(b in 0 until secondString.length){
             if (firstString[a] == secondString[b]){
-                sameChars += firstString[a]
+                sameChars  += firstString[a]
             }
         }
     }
-    print(sameChars)
+
+    for (ctr in 0 until sameChars.length) {
+        var replace = sameChars[ctr] + ""
+
+        //the characters that same between firstString and secondString are replaced to empty character
+        firstString = firstString.replace(replace, "")
+        secondString = secondString.replace(replace, "")
+    }
+    println("The unique characters between 1st String and 2nd String are: $firstString$secondString")
 }
