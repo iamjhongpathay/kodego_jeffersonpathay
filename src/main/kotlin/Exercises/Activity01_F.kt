@@ -15,7 +15,7 @@ fun main (){
         reverseString += inputWord[ctr--]
     }
     //condition to know the inputWord and reverseString are equal to Palindrome or NOT
-    if(inputWord == reverseString){
+    if(inputWord.uppercase() == reverseString.uppercase()){
         println("The $inputWord is a Palindrome String")
     }else
         println("The $inputWord is NOT a Palindrome String")
