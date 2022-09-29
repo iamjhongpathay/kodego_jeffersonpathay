@@ -3,181 +3,311 @@ fun main (){
     Implement Activity 02 - C using Classes.
     */
 
-//    var cannedFoods = arrayListOf<Any>(
-//        arrayOf("Corned Beef", "Argentina, 260g", "ACB260G", "36", "56.00"),
-//        arrayOf("Pork & Beans", "Hunt's, 100g", "PB100G", 22, 26.00)
-//    )
-//    var drinks = arrayListOf<Any>(
-//        arrayOf("Red Horse", "San Miguel, BIncan, 330ml", "RD330ML", 2, 68.00),
-//        arrayOf("Gatorade", "Gatorade, Blue Bolt, 500ml", "GBB500ML", 105, 51.00)
-//    )
-//    var frozenGoods = arrayListOf<Any>(
-//        arrayOf("Footlong Hot Dog", "Holiday,Jumbo, 1kg", "FHDHJ1KG", 42, 110.00),
-//        arrayOf("Pork Ribs", "Monterey, 1kg", "PM1KG", 50, 220.00)
-//    )
+    //class Products()
+    var products = Products()
 
-    //Calling Classes
-    var cannedFoods = CannedFoods()
-    var drinks = Drinks()
-    var frozenGoods = FrozenGoods()
+    var category : String = ""
+    var code : String = ""
+    var name : String = ""
+    var description : String = ""
+    var quantities : Int = 0
+    var price : Double = 0.0
 
-    //Main While Loop of entire Inventory Management
-    var condition : Boolean = true
-    while(condition){
+    var mainLoop : Boolean = true
+    while (mainLoop) {
 
-        //Main User Interface
-        println()
-        println("[Inventory Management]")
-        println()
-        println("[1] List of all Items")
-        println("[2] Search Item")
-        println("[3] Add Items")
-        println("[4] EXIT")
-        print("Choose 1, 2, 3 or 4 to proceed: ")
-        var userChoices : String = readln()
-
-        if(userChoices.toInt() == 1){                          //User Choose the "[1] List of All Items"
+        try{
+            //Main User Interface
             println()
-            println("[-----------List of All Items-----------]")
-            println("[--------Canned Foods--------]")
-            //Class CannedFoods -> Function displayCannedFoods()
-            cannedFoods.displayCannedFoods()
+            println("[-------Inventory Management-------]")
+            println()
+            println("[1] List of all Products")
+            println("[2] Search Products")
+            println("[3] Add")
+            println("[4] Edit")
+            println("[5] Delete")
+            println("[0] EXIT")
+            print("Choose 1-5 or 0 to proceed: ")
+            var userChoices: Int = readln().toInt()
 
-            println("[-----------Drinks-----------]")
-            //Class Drinks -> Function displayDrinks()
-            drinks.displayDrinks()
-
-            println("[--------Frozen Goods--------]")
-            //Class FrozenFoods -> Function displayFrozenFoods()
-            frozenGoods.displayFrozenGoods()
-            println("[---------------------------------------]")
-
-        } else if(userChoices.toInt() == 2){                    //User Choose the "[2] Search Item"
-            println("Sorry! The [2] Search List is under construction.")
-        } else if(userChoices.toInt() == 3){                    //User Choose the "[3] Add Items"
-
-            //While Loop of Add Items
-            var condition2 : Boolean = true
-            while (condition2){
-
-                //Add Items User Interface
+            if(userChoices == 1){                                                                                       //[1] List of all Products
                 println()
-                println("[-----------Add Items-----------]")
+                println("[-----------List of All Products-----------]")
+                products.listOfProducts()   //fun listOfProducts()
+
+            }else if(userChoices == 2){                                                                                 //[2] Search Products
                 println()
-                println("Categories:")
+                println("[-----------Search Product-----------]")
+                println()
+                print("Product Code: ")
+                code = readln()
+                if(code == products.productCode[code]){
+                    println("[-------------Available Data-------------]")
+                    println()
+                    products.searchOfProduct(code)  //fun searchOfProducts()
+                }else{
+                    println("(!)No Product Found!")
+                }
+
+            }else if(userChoices == 3){                                                                                 //[3] Add Products
+                println()
+                println("[-----------Add Products-----------]")
+                println()
+                println("Category:")
                 println("[1] Canned Foods")
                 println("[2] Drinks")
                 println("[3] Frozen Goods")
-                print("Which category do you want to add an item? ")
-                var chooseCategory : Int = readln().toInt()
+                println("[0] Cancel")
+                print("(?)Which category do you want to add an item? ")
 
-                //[1] Canned Foods Category to Add an Item
+                var chooseCategory : Int = readln().toInt()
                 if(chooseCategory == 1){
                     println()
-                    println("[-----------Add Canned Foods-----------]")
-                    println()
-                    print("Item Name: ")
-                    cannedFoods.addCannedFoods() //Class CanFoods -> Function addCannedFoods
+                    println("[-----------Add Product to Canned Foods-----------]")
+                    println("Category: Canned Foods")
+                    category = "Canned Foods"
+                    print("Product Code: ")
+                    code = readln()
+                    print("Name: ")
+                    name = readln()
+                    println("Description:")
+                    description = readln()
+                    print("Quantities: ")
+                    quantities = readln().toInt()
+                    print("Price: ")
+                    price = readln().toDouble()
 
-                    //Display all Canned Foods items
-                    println("[-----------Canned Foods-----------]")
-                    //Class CannedFoods -> Function displayCannedFoods()
-                    cannedFoods.displayCannedFoods()
+                    products.addProduct(category,code,name,description,quantities,price)    //fun addProducts
 
-                //[2] Drinks Category to Add an Item
+                    println("(!)Successful! Code: $code , Name: $name is added to Canned Foods.")
                 }else if(chooseCategory == 2){
                     println()
-                    println("[-----------Add Drinks-----------]")
-                    println()
-                    print("Item Name: ")
-                    drinks.addDrinks() //Class Drinks -> Function addDrinks
+                    println("[-----------Add Product to Drinks-----------]")
+                    println("Category: Drinks")
+                    category = "Drinks"
+                    print("Product Code: ")
+                    code = readln()
+                    print("Name: ")
+                    name = readln()
+                    println("Description:")
+                    description = readln()
+                    print("Quantities: ")
+                    quantities = readln().toInt()
+                    print("Price: ")
+                    price = readln().toDouble()
 
-                    //Display all Drinks items
-                    println("[-----------Drinks-----------]")
-                    //Class Drinks -> Function displayDrinks()
-                    drinks.displayDrinks()
+                    products.addProduct(category,code,name,description,quantities,price)    //fun addProducts
 
-                //[3] Frozen Goods Category to Add an Item
+                    println("(!)Successful! Code: $code , Name: $name is added to Drinks.")
                 }else if(chooseCategory == 3){
                     println()
-                    println("[-----------Add Frozen Goods-----------]")
+                    println("[-----------Add Product to Frozen Goods-----------]")
+                    println("Category: Frozen Goods")
+                    category = "Frozen Goods"
+                    print("Product Code: ")
+                    code = readln()
+                    print("Name: ")
+                    name = readln()
+                    println("Description:")
+                    description = readln()
+                    print("Quantities: ")
+                    quantities = readln().toInt()
+                    print("Price: ")
+                    price = readln().toDouble()
+
+                    products.addProduct(category,code,name,description,quantities,price)    //fun addProducts
+
+                    println("(!)Successful! Code: $code , Name: $name is added to Frozen Goods.")
+                }else if(chooseCategory == 0){
+                    mainLoop = continue
+                } else{
+                    println("(!)Invalid! You entered a number that not in the choices.")
+                }
+
+            }else if(userChoices == 4){                                                                                 //[4] Edit Products
+                println()
+                println("[-----------Edit Product Details-----------]")
+                println()
+                print("Enter product Code: ")
+                code = readln()
+
+                if(code == products.productCode[code]){
+                    products.searchToEdit(code)     //fun searchToEdit()
                     println()
-                    print("Item Name: ")
-                    frozenGoods.addFrozenGoods() //Class FrozenFoods -> Function addCFrozenFoods
+                    println("(!)Note! The Product Code CANNOT be modify.")
+                    println("Choose a Letter from above to modify the data of $code.")
+                    print("Enter the Letter here: ")
+                    var letterChoices : String = readln().lowercase()
+                    println()
 
-                    //Display all Frozen Goods items
-                    println("[-----------Frozen Goods-----------]")
-                    //Class FrozenFoods -> Function displayFrozenFoods()
-                    frozenGoods.displayFrozenGoods()
+                    if(letterChoices == "a"){
+                        println("(!)You chose to modify the [A]NAME of the $code.")
+                        print("Enter a New product name: ")
+                        name = readln()
+                        products.editProducts(letterChoices, code, name, "", 0, 0.0, "")
+
+                    }else if(letterChoices == "b"){
+                        println("(!)You chose to modify the [B]Category of the $code.")
+                        println("[1] Canned Foods")
+                        println("[2] Drinks")
+                        println("[3] Frozen Foods")
+                        println("(!)Choose a Number with available category from above to change the category of $code")
+                        print("Enter the Number here: ")
+                        var categoryOption : Int = readln().toInt()
+                        when(categoryOption){
+                            1 -> category = "Canned Foods"
+                            2 -> category = "Drinks"
+                            3 -> category = "Frozen Foods"
+                            else -> println("(!)Invalid! You entered a number that not in the choices.")
+                        }
+                        products.editProducts(letterChoices, code, "", category, 0, 0.0, "")
+
+                    }else if(letterChoices == "c"){
+                        println("(!)You chose to modify the [C]Quantities of the $code.")
+                        print("Enter a New quantities: ")
+                        quantities = readln().toInt()
+                        products.editProducts(letterChoices, code, "name", "", quantities, 0.0, "")
+
+                    }else if(letterChoices == "d"){
+                        println("(!)You chose to modify the [D]Price of the $code.")
+                        print("Enter a New price: ")
+                        price = readln().toDouble()
+                        products.editProducts(letterChoices, code, "name", "", 0, price, "")
+
+                    }else if(letterChoices == "e"){
+                        println("(!)You chose to modify the [E]Description of the $code.")
+                        print("Enter a New Description: ")
+                        description = readln()
+                        products.editProducts(letterChoices, code, "name", "", 0, 0.0, description)
+
+                    }else{
+                        println("(!)Invalid! You entered a letter that not in the choices to modify.")
+                    }
                 }else{
-                    println("Invalid! The number you enter is not one of the any choices.")
-                    break
+                    println("(!)No Product Found!")
                 }
 
-                //Asking the User if want to Add another Items.
-                println("Do you want to add another items? [Yes/No]")
-                var addAnother : String = readln().lowercase()
-                if (addAnother == "no"){ //Exit from [2] Add Items
-                    condition2 = false
-                }else if(addAnother == "yes"){ //Continue to [2] Add Items
-                    condition2 = true
+            }else if(userChoices == 5){                                                                                 // [5] Delete Products
+                println()
+                println("[-----------Delete Product-----------]")
+                println()
+                print("Enter product Code: ")
+                code = readln()
+
+                if(code == products.productCode[code]){
+                    println("[-------------Data of the Product to Delete-------------]")
+                    println()
+                    products.searchOfProduct(code)
+                    println()
+
+                    var deletionLoop : Boolean = true
+                    while(deletionLoop){
+                        println("(!)Do you want to DELETE this Product?[Yes/No]: ")
+                        var deleteThis : String = readln().lowercase()
+                        if(deleteThis == "yes"){
+                            products.deleteProduct(code)    //fun deleteProduct()
+                            deletionLoop = false
+                        }else if(deleteThis == "no"){
+                            println()
+                            println("(!)Cancelled! Product deletion cancelled.")
+                            deletionLoop = false
+                        }else{
+                            println()
+                            println("(!)Choose between Yes or No")
+                        }
+                    }
+                }else{
+                    println("(!)No Product Found!")
                 }
+            } else if(userChoices == 0){                                                                                //[0] EXIT
+                println()
+                println("(!)The Inventory Management is exiting. . .")
+                println("Thank you!")
+                mainLoop = false
+
+            }else{
+                println("(!)Invalid! You entered a number that not in the choices.")
             }
-        }else if (userChoices.toInt() == 4){                   //User Choose the "[4] Exit"
-            condition = false
-        }else {
-            println("Invalid! The number you enter is not one of the any choices.")
+        }catch (e : NumberFormatException){
+            println("(!)Invalid! Enter a digits only.")
+        }
+    }
+}
+
+
+
+class Products(){
+
+    var productCategory = mutableMapOf<String, String>("PNB123" to "Canned Foods")
+    var productName = mutableMapOf<String, String>("PNB123" to "Pork & Beans")
+    var productDescription = mutableMapOf<String, String>("PNB123" to "Hunt's Pork & Beans")
+    var productQuantities = mutableMapOf<String, Int>("PNB123" to 611)
+    var productPrice = mutableMapOf<String, Double>("PNB123" to 56.4)
+    var productCode = mutableMapOf<String, String>("PNB123" to "PNB123")
+
+    fun listOfProducts(){
+        for(key in productCategory.keys){
+            println("[$key]     -       ${productName[key]}")
+        }
+    }
+
+    fun searchOfProduct(productCode : String){
+        println("${productName[productCode]} - [${this.productCode[productCode]}]")
+        println("Category: ${productCategory[productCode]}")
+        println("Quantities: ${productQuantities[productCode]} Pieces")
+        println("Price: ${productPrice[productCode]} PHP")
+        println("Description: ${productDescription[productCode]}")
+    }
+
+    fun addProduct(pCategory: String, pCode: String, pName: String,  pDescription: String, pQuantities: Int, pPrice: Double){
+        productCategory.put(pCode, pCategory)
+        productCode.put(pCode, pCode)
+        productName.put(pCode, pName)
+        productDescription.put(pCode, pDescription)
+        productQuantities.put(pCode, pQuantities)
+        productPrice.put(pCode, pPrice)
+    }
+
+    fun searchToEdit(productCode : String){
+        println("[-------------Available Data to Modify-------------]")
+        println()
+        println("[A]: ${productName[productCode]} - [${this.productCode[productCode]}]")
+        println("[B]: Category: ${productCategory[productCode]}")
+        println("[C]: Quantities: ${productQuantities[productCode]} Pieces")
+        println("[D]: Price: ${productPrice[productCode]} PHP")
+        println("[E]: Description: ${productDescription[productCode]}")
+
+    }
+
+    fun editProducts(userChose: String, code: String, name: String, category: String, quantities: Int, price: Double, description: String ): String{
+        if(userChose == "a"){
+            productName.replace(code, name)
+            println("(!)Successful! The Name of [$code] is modified.")
+        }else if(userChose == "b"){
+            productCategory.replace(code, category)
+            println("(!)Successful! The Category of [$code] is modified.")
+        }else if(userChose == "c"){
+            productQuantities.replace(code, quantities)
+            println("(!)Successful! The Quantities of [$code] is modified.")
+        }else if(userChose == "d"){
+            productPrice.replace(code, price)
+            println("(!)Successful! The Price of [$code] is modified.")
+        }else if(userChose == "e"){
+            productDescription.replace(code, description)
+            println("(!)Successful! The Description of [$code] is modified.")
         }
 
+        return  userChose
     }
 
-
-}
-
-class CannedFoods{
-    var cannedFoods = arrayListOf("Corned Beef", "Pork & Beans")
-
-    fun displayCannedFoods(){
-        for (i in cannedFoods)
-            println(i)
-        println()
-    }
-    fun addCannedFoods(){
-        var itemName : String = readln()
-        cannedFoods.add(itemName) //New Item(Data) Added on cannedFoods Variable
-        println()
-        println("The $itemName was added to Canned Foods Category.")
-    }
-}
-
-class Drinks{
-    var drinks = arrayListOf("Red Horse", "Gatorade")
-
-    fun displayDrinks(){
-        for (i in drinks)
-            println(i)
-        println()
-    }
-    fun addDrinks(){
-        var itemName : String = readln()
-        drinks.add(itemName) //New Item(Data) Added on drinks Variable
-        println()
-        println("The $itemName was added to Drinks Category.")
-    }
-}
-
-class FrozenGoods{
-    var frozenGoods = arrayListOf("Footlong Hot Dog", "Pork Ribs")
-
-    fun displayFrozenGoods(){
-        for (i in frozenGoods)
-            println(i)
-        println()
-    }
-    fun addFrozenGoods(){
-        var itemName : String = readln()
-        frozenGoods.add(itemName) //New Item(Data) Added on frozenGoods Variable
-        println()
-        println("The $itemName was added to Frozen Goods Category.")
+    fun deleteProduct(code: String){
+        println("(!)Deleting. . .")
+        productName.remove(code)
+        productCode.remove(code)
+        productCategory.remove(code)
+        productQuantities.remove(code)
+        productPrice.remove(code)
+        productDescription.remove(code)
+        println("(!)Successful! The Product $code is deleted successfully")
     }
 }
