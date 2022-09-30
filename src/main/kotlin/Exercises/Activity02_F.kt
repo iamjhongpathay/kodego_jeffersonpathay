@@ -1,5 +1,6 @@
 fun main (){
     /*
+    Activity 02 - F
     Implement Activity 02 - C using Classes.
     */
 
@@ -54,14 +55,14 @@ fun main (){
                 println("[-----------Add Products-----------]")
                 println()
                 println("Category:")
-                println("[1] Canned Foods")
-                println("[2] Drinks")
-                println("[3] Frozen Goods")
+                println("[A] Canned Foods")
+                println("[B] Drinks")
+                println("[C] Frozen Goods")
                 println("[0] Cancel")
                 print("(?)Which category do you want to add an item? ")
 
-                var chooseCategory : Int = readln().toInt()
-                if(chooseCategory == 1){
+                var chooseCategory : String = readln().lowercase()
+                if(chooseCategory == "a"){
                     println()
                     println("[-----------Add Product to Canned Foods-----------]")
                     println("Category: Canned Foods")
@@ -77,10 +78,10 @@ fun main (){
                     print("Price: ")
                     price = readln().toDouble()
 
-                    products.addProduct(category,code,name,description,quantities,price)    //fun addProducts
+                    products.addProduct(chooseCategory, category,code,name,description,quantities,price)    //fun addProducts
 
-                    println("(!)Successful! Code: $code , Name: $name is added to Canned Foods.")
-                }else if(chooseCategory == 2){
+
+                }else if(chooseCategory == "b"){
                     println()
                     println("[-----------Add Product to Drinks-----------]")
                     println("Category: Drinks")
@@ -96,10 +97,10 @@ fun main (){
                     print("Price: ")
                     price = readln().toDouble()
 
-                    products.addProduct(category,code,name,description,quantities,price)    //fun addProducts
+                    products.addProduct(chooseCategory, category,code,name,description,quantities,price)    //fun addProducts
 
-                    println("(!)Successful! Code: $code , Name: $name is added to Drinks.")
-                }else if(chooseCategory == 3){
+
+                }else if(chooseCategory == "c"){
                     println()
                     println("[-----------Add Product to Frozen Goods-----------]")
                     println("Category: Frozen Goods")
@@ -115,13 +116,12 @@ fun main (){
                     print("Price: ")
                     price = readln().toDouble()
 
-                    products.addProduct(category,code,name,description,quantities,price)    //fun addProducts
+                    products.addProduct(chooseCategory, category,code,name,description,quantities,price)    //fun addProducts
 
-                    println("(!)Successful! Code: $code , Name: $name is added to Frozen Goods.")
-                }else if(chooseCategory == 0){
+                }else if(chooseCategory == "0"){
                     mainLoop = continue
                 } else{
-                    println("(!)Invalid! You entered a number that not in the choices.")
+                    println("(!)Invalid! You entered a Letter that not in the choices.")
                 }
 
             }else if(userChoices == 4){                                                                                 //[4] Edit Products
@@ -259,13 +259,53 @@ class Products(){
         println("Description: ${productDescription[productCode]}")
     }
 
-    fun addProduct(pCategory: String, pCode: String, pName: String,  pDescription: String, pQuantities: Int, pPrice: Double){
-        productCategory.put(pCode, pCategory)
-        productCode.put(pCode, pCode)
-        productName.put(pCode, pName)
-        productDescription.put(pCode, pDescription)
-        productQuantities.put(pCode, pQuantities)
-        productPrice.put(pCode, pPrice)
+    fun addProduct(
+        userChose: String,
+        pCategory: String,
+        pCode: String,
+        pName: String,
+        pDescription: String,
+        pQuantities: Int,
+        pPrice: Double): Boolean{
+
+        if(pCode == productCode[pCode]){
+            println("(!)Invalid! The Product Code is already exist!")
+
+            return false
+        }else if(userChose == "a"){
+            productCategory.put(pCode, pCategory)
+            productCode.put(pCode, pCode)
+            productName.put(pCode, pName)
+            productDescription.put(pCode, pDescription)
+            productQuantities.put(pCode, pQuantities)
+            productPrice.put(pCode, pPrice)
+
+            println("(!)Successful! Code: $pCode , Name: $pName is added to Canned Foods.")
+            return true
+
+        }else if(userChose == "b"){
+            productCategory.put(pCode, pCategory)
+            productCode.put(pCode, pCode)
+            productName.put(pCode, pName)
+            productDescription.put(pCode, pDescription)
+            productQuantities.put(pCode, pQuantities)
+            productPrice.put(pCode, pPrice)
+
+            println("(!)Successful! Code: $pCode , Name: $pName is added to Drinks.")
+            return true
+
+        }else if(userChose == "c"){
+            productCategory.put(pCode, pCategory)
+            productCode.put(pCode, pCode)
+            productName.put(pCode, pName)
+            productDescription.put(pCode, pDescription)
+            productQuantities.put(pCode, pQuantities)
+            productPrice.put(pCode, pPrice)
+
+            println("(!)Successful! Code: $pCode , Name: $pName is added to Frozen Goods.")
+            return true
+        }
+        return true
     }
 
     fun searchToEdit(productCode : String){
@@ -279,7 +319,15 @@ class Products(){
 
     }
 
-    fun editProducts(userChose: String, code: String, name: String, category: String, quantities: Int, price: Double, description: String ): String{
+    fun editProducts(
+        userChose: String,
+        code: String,
+        name: String,
+        category: String,
+        quantities: Int,
+        price: Double,
+        description: String ): String{
+
         if(userChose == "a"){
             productName.replace(code, name)
             println("(!)Successful! The Name of [$code] is modified.")
