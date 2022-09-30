@@ -22,7 +22,7 @@ fun main(){
                 println("[!]Error: Enter a Word!")
             }else{
 
-                if((firstString.checkIfString() == "true") && (secondString.checkIfString() == "true")){
+                if((firstString.intOrString() == "true") && (secondString.intOrString() == "true")){
                     mainLoop = false
 
                     //finding the same characters of firstString with secondString
