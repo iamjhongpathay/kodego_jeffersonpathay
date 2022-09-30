@@ -22,7 +22,7 @@ fun main(){
                 println("[!]Error: Enter a Word!")
             }else{
 
-                if(inputWord.checkIfString() == "true"){
+                if(inputWord.checkIntOrString() == "true"){
                     mainLoop = false
 
                     var reverseString : String = ""
