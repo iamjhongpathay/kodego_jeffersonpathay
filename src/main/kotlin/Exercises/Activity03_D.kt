@@ -264,7 +264,6 @@ class Products_A03D(){
     fun addProduct(
         userChose: String, pCategory: String, pCode: String, pName: String,
         pDescription: String, pQuantities: Int, pPrice: Double, productCode: String): Boolean{
-//        var condition : Boolean
 
         if(pCode == this.productCode[productCode]){
             println("(!)Invalid! The Product Code is already exist!")
