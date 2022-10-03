@@ -80,7 +80,12 @@ fun main (){
                     print("Price: ")
                     price = readln().toDouble()
 
-                    products.addProduct(chooseCategory, category,code,name,description,quantities,price, code)    //fun addProducts
+                    if(code == products.productCode[code]){
+                        println("(!)Invalid! The Product Code is already exist!")
+                    }else{
+                        products.addProduct(chooseCategory, category,code,name,description,quantities,price)    //fun addProducts
+                    }
+
 
 
                 }else if(chooseCategory == "b"){
@@ -99,7 +104,11 @@ fun main (){
                     print("Price: ")
                     price = readln().toDouble()
 
-                    products.addProduct(chooseCategory, category,code,name,description,quantities,price, code)    //fun addProducts
+                    if(code == products.productCode[code]){
+                        println("(!)Invalid! The Product Code is already exist!")
+                    }else{
+                        products.addProduct(chooseCategory, category,code,name,description,quantities,price)    //fun addProducts
+                    }
 
 
                 }else if(chooseCategory == "c"){
@@ -118,7 +127,11 @@ fun main (){
                     print("Price: ")
                     price = readln().toDouble()
 
-                    products.addProduct(chooseCategory, category,code,name,description,quantities,price, code)    //fun addProducts
+                    if(code == products.productCode[code]){
+                        println("(!)Invalid! The Product Code is already exist!")
+                    }else{
+                        products.addProduct(chooseCategory, category,code,name,description,quantities,price)    //fun addProducts
+                    }
 
                 }else if(chooseCategory == "0"){
                     mainLoop = continue
@@ -263,13 +276,9 @@ class Products_A03D(){
 
     fun addProduct(
         userChose: String, pCategory: String, pCode: String, pName: String,
-        pDescription: String, pQuantities: Int, pPrice: Double, productCode: String): Boolean{
+        pDescription: String, pQuantities: Int, pPrice: Double): Boolean{
 
-        if(pCode == this.productCode[productCode]){
-            println("(!)Invalid! The Product Code is already exist!")
-            return false
-
-        }else if((pCategory.isEmpty()) || (pCode.isEmpty()) || (pName.isEmpty()) || (pDescription.isEmpty() || (pQuantities < 0) || (pPrice < 0.0))){
+        if((pCategory.isEmpty()) || (pCode.isEmpty()) || (pName.isEmpty()) || (pDescription.isEmpty() || (pQuantities < 0) || (pPrice < 0.0))){
             println("(!)Invalid! One of the field is empty OR the Quantities and Price should not less than zero(0).")
             return false
 
@@ -281,7 +290,7 @@ class Products_A03D(){
                 productDescription.put(pCode, pDescription)
                 productQuantities.put(pCode, pQuantities)
                 productPrice.put(pCode, pPrice)
-                println("(!)Successful! Code: $pCode , Name: $pName is added to Canned Foods.")
+                println("(!)Successful! Code: $pCode , Name: $pName is added to Canned Foods category.")
 
             }else if(userChose == "b"){
                 productCategory.put(pCode, pCategory)
@@ -290,7 +299,7 @@ class Products_A03D(){
                 productDescription.put(pCode, pDescription)
                 productQuantities.put(pCode, pQuantities)
                 productPrice.put(pCode, pPrice)
-                println("(!)Successful! Code: $pCode , Name: $pName is added to Drinks.")
+                println("(!)Successful! Code: $pCode , Name: $pName is added to Drinks category.")
 
             }else if(userChose == "c"){
                 productCategory.put(pCode, pCategory)
@@ -299,7 +308,7 @@ class Products_A03D(){
                 productDescription.put(pCode, pDescription)
                 productQuantities.put(pCode, pQuantities)
                 productPrice.put(pCode, pPrice)
-                println("(!)Successful! Code: $pCode , Name: $pName is added to Frozen Goods.")
+                println("(!)Successful! Code: $pCode , Name: $pName is added to Frozen Goods category.")
             }
             return true
         }
