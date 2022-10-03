@@ -6,14 +6,6 @@ import org.junit.jupiter.api.Test
 
 class Products_A03DTest{
 
-  //If pCode is same with productCode return false
-//  @Test
-//  fun pCodeIsSameWithProductCodeReturnFalse(){
-//   var productsA03d = Products_A03D()
-//   assertFalse(productsA03d.addProduct("userChose", "pCategory", "PNB350G", "pName",
-//       "pDescription", 0, 0.0, "PNB350G")); false
-//  }
-
     //All the parameters is not empty return True
     @Test
     fun allTheParametersAreNotEmptyReturnTrue(){
