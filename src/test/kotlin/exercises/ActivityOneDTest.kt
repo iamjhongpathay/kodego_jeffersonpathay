@@ -1,4 +1,4 @@
-package Exercises
+package exercises
 
 import ActivityOneD
 import org.junit.jupiter.api.Assertions.*

@@ -1,4 +1,4 @@
-package Practice_Activities
+package practice_activities
 
 import SalesDiscount
 import org.junit.jupiter.api.Assertions.*

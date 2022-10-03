@@ -1,4 +1,4 @@
-package Exercises
+package exercises
 
 import Products_A03D
 import org.junit.jupiter.api.Assertions.*
@@ -19,13 +19,13 @@ class Products_A03DTest{
     fun allTheParametersAreNotEmptyReturnTrue(){
         var productsA03d = Products_A03D()
         assertTrue(productsA03d.addProduct("userChose", "pCategory", "pCode", "pName",
-            "pDescription", 0, 0.0, "productCode")); true
+            "pDescription", 0, 0.0)); true
     }
 
     //Product Details is empty or Quantities and Price is less than 0 return false
     @Test fun ProductDetailsIsEmptyOrQuantityAndPriceIsLessThanZeroReturnFalse(){
     var productsA03d = Products_A03D()
     assertFalse(productsA03d.addProduct("userChose", "", "", "",
-        "", -1, -1.0, "productCode")); false
+        "", -1, -1.0)); false
     }
  }
