@@ -1,15 +1,17 @@
 package com.oop
 
-class Student(var _studentId : Int) : Person(){
+class Student(name: String, age: Int) : Person(name, age){
 
-    var studentId: Int = _studentId
+    var studentID : Int = 0
 
-    fun displatStudentId(){
-        println(studentId)
+    fun displayStudentID(){
+        println(studentID)
     }
 
+
+    //overriding - polymorphism
     override fun displayName() {
-        super.displayName()
-        println("display function displayName from student class")
+        super.displayName() //displaying the function from Person class = Implementation
+        println("This is from the student class")
     }
 }
