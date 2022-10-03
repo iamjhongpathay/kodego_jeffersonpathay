@@ -1,3 +1,5 @@
+package kotlin_programs
+
 fun main(){
     var numComparator = NumberComparator()
     println(numComparator.getMaxNumber(10, 15, 6))

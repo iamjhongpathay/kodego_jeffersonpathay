@@ -1,3 +1,5 @@
+package kotlin_programs
+
 fun main (){
     var anne = Person("James")
     anne.age = 25
