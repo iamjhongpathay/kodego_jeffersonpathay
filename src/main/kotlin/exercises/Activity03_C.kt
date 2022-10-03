@@ -1,4 +1,4 @@
-package Exercises
+package exercises
 fun main(){
     /*
     Activity 03 - C
