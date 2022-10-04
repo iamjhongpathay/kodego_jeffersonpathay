@@ -10,8 +10,8 @@ class Products_A03DTest{
     @Test
     fun allTheParametersAreNotEmptyReturnTrue(){
         var productsA03d = Products_A03D()
-        assertTrue(productsA03d.addProduct("userChose", "pCategory", "pCode", "pName",
-            "pDescription", 0, 0.0)); true
+        assertTrue(productsA03d.addProduct("userChose", "pCategory",
+            "pCode", "pName", "pDescription", 0, 0.0)); true
     }
 
     //Product Details is empty or Quantities and Price is less than 0 return false
