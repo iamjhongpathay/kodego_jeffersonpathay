@@ -278,7 +278,8 @@ class Products_A03D(){
         userChose: String, pCategory: String, pCode: String, pName: String,
         pDescription: String, pQuantities: Int, pPrice: Double): Boolean{
 
-        if((pCategory.isEmpty()) || (pCode.isEmpty()) || (pName.isEmpty()) || (pDescription.isEmpty() || (pQuantities < 0) || (pPrice < 0.0))){
+        if((pCategory.isEmpty()) || (pCode.isEmpty()) || (pName.isEmpty()) ||
+            (pDescription.isEmpty() || (pQuantities < 0) || (pPrice < 0.0))){
             println("(!)Invalid! One of the field is empty OR the Quantities and Price should not less than zero(0).")
             return false
 
